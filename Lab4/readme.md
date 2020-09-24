@@ -49,9 +49,15 @@ Deliverables are due next Tuesday. Post a link to the wiki page on your main cla
 The OLED display from the Lab 02 is a great and helpful tool for debug purposes; the serial monitor is another. Use the code from `File->Examples->Communication->Graph` as a template to print data from your potentiometer to the serial monitor. Don't disconnect the USB cable after uploading the code; instead, use the serial monitor button on the Arduino IDE (in the upper right corner, magnifying glass icon) to see the data coming from the Arduino. 
  
 **a. Based on the readings from the serial monitor, what is the range of the analog values being read?**
+ 0 - 1023
+
  
 **b. How many bits of resolution does the analog to digital converter (ADC) on the Arduino have** (hint: where might you look to find this sort of thing)? How many are you using with the range of values you're seeing?
  
+10 bits since our max value is 1023 and 2^10 is 1024.
+
+
+
 You can also read inputs from the serial monitor, or wait for the serial monitor to open before spewing data over the USB line! A nice tutorial on the basic serial transmit functions can be found at http://arduino.cc/en/Tutorial/AnalogReadSerial. 
 
 NEW!!! Also you can plot the data with the Arduino Serial Plotter! This can be found under `Tools->Serial Plotter`. Try it out.
