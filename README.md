@@ -6,4 +6,6 @@ Completed Labs for Eddie Rodriguez
 2. [Eddie's Lab 2](//github.com/ThisGuyEddie/Interactive-Lab-Hub/tree/master/Lab2)
 3. [Eddie's Lab 3](//github.com/ThisGuyEddie/Interactive-Lab-Hub/tree/master/Lab3)
 4. [Eddie's Lab 4](//github.com/ThisGuyEddie/Interactive-Lab-Hub/tree/master/Lab4)
+4. [Eddie's Lab 5](//github.com/ThisGuyEddie/Interactive-Lab-Hub/tree/master/Lab5)
+4. [Eddie's Lab 6](//github.com/ThisGuyEddie/Interactive-Lab-Hub/tree/master/Lab6)
 
