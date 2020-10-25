@@ -63,3 +63,4 @@ Program a simple application that understands different basic greetings (for exa
 [sayhellothere.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/sayhellothere.py)
 ### Record someone trying out your design
 [Eli's Demo](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/eli-mcgregor.MOV)
+https://www.youtube.com/watch?v=nUfYooMcEqA
