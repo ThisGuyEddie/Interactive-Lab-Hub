@@ -4,11 +4,15 @@ from vosk import Model, KaldiRecognizer
 import sys
 import os
 import wave
-import pygame
-
+#import pygame
+from pydub import AudioSegment
+from pydub.playback import play
+import json
 
 message = "hello there"
-pygame.init()
+
+sound = AudioSegment.from_wav("generalkenobi.wav")
+
 if not os.path.exists("model"):
     print ("Please download the model from https://github.com/alphacep/vosk-api/blob/master/doc/models.md and unpack as 'model' in the current folder.")
     exit (1)
@@ -28,12 +32,12 @@ while True:
         break
     if rec.AcceptWaveform(data):
         print(rec.Result())
-            if rec.Result() = message:
-		print("General Kenobi!)
-                pygame.mixer.music.load("generalkenobi.wav")
-		exit(1)
-
-    else: 
+    else:
         print(rec.PartialResult())
 
-print(rec.FinalResult())
+result = json.loads(rec.FinalResult())["text"]
+print(result)
+if message in result:
+    print("General Kenobi!")
+    play(sound)
+
