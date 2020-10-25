@@ -56,7 +56,8 @@ Next, try out HelloArduino. First have HelloArduino.ino listen for messages from
 
 
 Change the HelloArduino.py program to take in inputs from the user to have them translated to morse code on the Arduino.
-
+[helloArduino.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/helloArduino.py)
 ## Your own voice agent
 Program a simple application that understands different basic greetings (for example, Yo!, Good morning! And Good afternoon!) and responds either visibly, physically or auditorially in kind!
-
+[hellothere.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/hellothere.py)
+[sayhellothere.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/sayhellothere.py)
