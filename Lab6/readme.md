@@ -23,6 +23,7 @@ These scripts use a program called vosk to recognize numbers.
 We add the words into the KaldiRecognizer line of test_words.py
 ## Include the output of vosk recognizing phrases you taught it to look for.
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/hello.png) 
+![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/test.png)
 
 ## Include the listing for a shell script and model files that you use to get vosk to recognize these phrases.
 
