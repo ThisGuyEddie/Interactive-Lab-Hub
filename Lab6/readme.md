@@ -8,8 +8,12 @@ Take a look at the code in the python file, using cat, or nano.
 Also try the shellscripts in the textToSpeech directory.
 
 ** How do you know what the shell script is doing? **
+* Vi into the shell script and read it. 
+
 
 Adapt the scripts so that they say what you want them to say.
+* rec = KaldiRecognizer(model, wf.getframerate(), "hello good morning zero oh one two three four five six seven eight nine [unk]")
+
 
 Now try the shellscripts in the speechToText directory.
 
