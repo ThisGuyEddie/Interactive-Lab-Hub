@@ -51,19 +51,12 @@ Map various strings to sensor values for an build out a switch-case to
 
 Next, try out HelloArduino. First have HelloArduino.ino listen for messages from HelloArduino.py. 
 ## Next, use morse_code_translator.ino. What happens differently?
-helloArduino.py has the arduino LEDs flash "SOS" in morse code. 
+* helloArduino.py has the arduino LEDs flash "SOS" in morse code. 
 
 
 
 Change the HelloArduino.py program to take in inputs from the user to have them translated to morse code on the Arduino.
 
-Your own voice agent
+## Your own voice agent
 Program a simple application that understands different basic greetings (for example, Yo!, Good morning! And Good afternoon!) and responds either visibly, physically or auditorially in kind!
 
-You are free to adapt this assignment to have the agent respond to any other set of vocabulary for any other purpose.
-
-Record someone trying out your design
-
-Using a phone or other video device, record someone trying out your GreetingBot. (This does not need to be an advertisement for your ChatBot; it is okay if the person is confused or asks questions or doesn't like it. We like the drama. Do not record someone using the default ChatBot.) Post the video to your README.md page!
-
-Submit your code to Github
