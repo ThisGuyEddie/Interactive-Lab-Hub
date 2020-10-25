@@ -8,7 +8,7 @@ Take a look at the code in the python file, using cat, or nano.
 Also try the shellscripts in the textToSpeech directory.
 
 ** How do you know what the shell script is doing? **
-* Vi into the shell script and read it. 
+* 'cat' or 'vi' into the shell script and read it. 
 
 
 Adapt the scripts so that they say what you want them to say.
@@ -20,7 +20,7 @@ Now try the shellscripts in the speechToText directory.
 These scripts use a program called vosk to recognize numbers.
 
 ## How do we use vosk to recognize words and phrases?
-
+We add the words into the KaldiRecognizer line of test_words.py
 ## Include the output of vosk recognizing phrases you taught it to look for.
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/hello.png) 
 
