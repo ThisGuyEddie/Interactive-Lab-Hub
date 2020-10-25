@@ -18,7 +18,7 @@ These scripts use a program called vosk to recognize numbers.
 ## How do we use vosk to recognize words and phrases?
 
 ## Include the output of vosk recognizing phrases you taught it to look for.
-![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/Screen%20Shot%202020-10-25%20at%2012.03.54%20PM.png) 
+![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/hello.png) 
 
 ## Include the listing for a shell script and model files that you use to get vosk to recognize these phrases.
 
