@@ -61,3 +61,5 @@ Change the HelloArduino.py program to take in inputs from the user to have them 
 Program a simple application that understands different basic greetings (for example, Yo!, Good morning! And Good afternoon!) and responds either visibly, physically or auditorially in kind!
 [hellothere.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/hellothere.py)
 [sayhellothere.py](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/sayhellothere.py)
+### Record someone trying out your design
+[Eli's Demo](//github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/Lab6/eli-mcgregor.MOV)
