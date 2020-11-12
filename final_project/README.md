@@ -1,3 +1,19 @@
+## Tasks Done
+
+* Parts ordered
+* First Revision Breadboarded
+* App built for Android Phone and Watch
+* Bluetooth pairing works from Glasses to Phone.
+
+## Tasks Left to Do 
+* Package Raw Data for Android Phone
+* Get EAGLE drawings done
+* Send board out for manufacturing
+* Assemble Board
+* Flash Board
+* Pray it works
+
+
 ## Project Idea 
 Anxiety disorder results in mild to severe adverse behavioral effects in 31.1% of US adults at some point in their life. Researchers have linked anxiety to faster and shallower breathing. Respiration rate may thus be a good candidate for real-time anxiety monitoring and intervention. Various sensors like Bodybeat, Hexoskin, and a mask-based humidity sensor can measure breathing. However, some are uncomfortable to wear for an extended time, and others are currently priced out of consumers’ budgets. 
 
