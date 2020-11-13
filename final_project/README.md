@@ -7,6 +7,9 @@
 
 ## Tasks Left to Do 
 * Package Raw Data for Android Phone
+    Buffer every n seconds
+    Get SD card and record data
+    Add request data button into the app glasses would need to receive character from phone to switch modes
 * Get EAGLE drawings done
 * Send board out for manufacturing
 * Assemble Board
