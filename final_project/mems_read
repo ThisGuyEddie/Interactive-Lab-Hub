@@ -48,9 +48,18 @@ void loop() {
       // 'G' : Get contents from SD Card
       // 'S' : Store Raw Data to SD Card
 
-      if (Serial2.read() == 'T'){ mode= 'T';}
-      if (Serial2.read() == 'G'){ mode= 'G';}
-      if (Serial2.read() == 'S'){ mode= 'S';} 
+      if (Serial2.read() == 'T'){
+        mode= 'T';
+        Serial.println('Transmitting RAW Signal');
+        }
+      if (Serial2.read() == 'G'){
+        mode= 'G';
+        Serial.println('Getting contents from SD Card');
+        }
+      if (Serial2.read() == 'S'){
+        mode= 'S';
+        Serial.println('Storing RAW to SD Card');
+      } 
     } 
 
   switch(mode){
