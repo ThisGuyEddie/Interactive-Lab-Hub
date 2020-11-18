@@ -1,27 +1,126 @@
+#include <SD.h>
+#include <SPI.h>
+
+
 // Connect the MEMS AUD output to the Teensy 4.1 40 pin
 int mic = 40;
 
 // Variables to find the peak-to-peak amplitude of AUD output
-const int sampleTime = 20; 
+const int sampleTime = 5; 
 int micOut;
 
 //previous VU value
 int preValue = 0; 
 
+// make a string for assembling the data to log:
+String dataString = "";
 
+// Teensy 4.1 on-board: BUILTIN_SDCARD
+const int chipSelect = BUILTIN_SDCARD;
+
+File myFile;
+
+// Mode Select Char for Bluetooth Mode Switch Case
+char mode = 'S';
+
+///// SETUP ////
 void setup() {
   Serial.begin(9600);
   Serial2.begin(9600);
+
+  Serial.print("Initializing SD card...");
+  
+  // see if the card is present and can be initialized:
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Card failed, or not present");
+    // don't do anything more:
+    return;
+  }
+  Serial.println("card initialized.");
 }
 
-void loop() {
-   int micOutput = findPTPAmp();
-   VUMeter(micOutput);
 
-  if (Serial2.available() > 0){
-    Serial2.println(micOutput);
+//// LOOP ////
+void loop() {
+
+    if (Serial2.available() > 0){
+      // 'T' : Transmit RAW datastream live over Bluetooth
+      // 'G' : Get contents from SD Card
+      // 'S' : Store Raw Data to SD Card
+
+      if (Serial2.read() == 'T'){ mode= 'T';}
+      if (Serial2.read() == 'G'){ mode= 'G';}
+      if (Serial2.read() == 'S'){ mode= 'S';} 
+    } 
+
+  switch(mode){
+
+  
+    case 'T':
+      // 'T' : Transmit RAW datastream live over Bluetooth
+      Serial2.println(micOut);
+
+      // Stream SD Card Contents
+      // re-open the file for reading:
+      myFile = SD.open("micOuput.txt");
+      if (myFile) {
+      Serial.println("micOuput.txt:");
+    
+      // read from the file until there's nothing else in it:
+      while (myFile.available()) {
+      Serial.write(myFile.read());
+      }
+      // close the file:
+      myFile.close();
+      } else {
+      // if the file didn't open, print an error:
+      Serial.println("error opening micOuput.txt");
+      }
+
+    case 'G':
+      // Stream SD Card Contents
+      // re-open the file for reading:
+      myFile = SD.open("micOuput.txt");
+      if (myFile) {
+      Serial.println("micOuput.txt:");
+    
+      // read from the file until there's nothing else in it:
+      while (myFile.available()) {
+      Serial.write(myFile.read());
+      }
+      // close the file:
+      myFile.close();
+      } else {
+      // if the file didn't open, print an error:
+      Serial.println("error opening micOuput.txt");
+      }
+
+
+    case 'S':
+        // Store micOut readings to SD Card
+        // read mic input and append to dataString:
+
+      dataString += String(micOut);
+      dataString += ","; 
+      
+      // open the file.
+      File dataFile = SD.open("micOutput.txt", FILE_WRITE);
+
+      // if the file is available, write to it:
+      if (dataFile) {
+        dataFile.println(dataString);
+        dataFile.close();
+        // print to the serial port too:
+        Serial.println(dataString);
+      }  
+      // if the file isn't open, pop up an error:
+      else {
+        Serial.println("error opening micOuput.txt");
+      } 
   }
-}   
+  int micOutput = findPTPAmp();
+  VUMeter(micOutput);
+}
 
 
 // Find the Peak-to-Peak Amplitude Function
@@ -62,20 +161,15 @@ int findPTPAmp(){
   return PTPAmp;    // return PTPAmp (Peak-to-Peak Amplitude) or micOut_Volts  (active voltage readings)
 }
 
+
 // Volume Unit Meter function: map the PTP amplitude to a volume unit between 0 and 10.
 int VUMeter(int micAmp){
 
-  // Map the mic peak-to-peak amplitude to a volume unit between 0 and 10.
-   // Amplitude is used instead of voltage to give a larger (and more accurate) range for the map function.
+  //  Map the mic peak-to-peak amplitude to a volume unit between 0 and 10.
+  // Amplitude is used instead of voltage to give a larger (and more accurate) range for the map function.
 
   int fill = map(micAmp, 23, 750, 0, 10); 
 
-  // Update the volume unit value iff it changes from previous value
-//  while(fill != preValue)
-//  {
-//    Serial.println(fill);
-//    preValue = fill;
-//  }
     Serial.println(fill);
     preValue = fill;
 }
