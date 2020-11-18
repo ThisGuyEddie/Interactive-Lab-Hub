@@ -7,9 +7,13 @@
 
 ## Tasks Left to Do 
 * ~~Package Raw Data for Android Phone~~
+
     ~~Buffer every n seconds~~
+
     ~~Get SD card and record data~~
+    
     ~~Add request data button into the app glasses would need to receive character from phone to switch modes~~
+    
 * Test with Arduino Nano instead of Teensy 4.1
 * Get Altium drawings done
     Need to get Arduino Nano parts onto drawing
