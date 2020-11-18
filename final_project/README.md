@@ -1,16 +1,18 @@
 ## Tasks Done
 
-* Parts ordered
+* Breadboard Parts ordered
 * First Revision Breadboarded
 * App built for Android Phone and Watch
 * Bluetooth pairing works from Glasses to Phone.
 
 ## Tasks Left to Do 
-* Package Raw Data for Android Phone
-    Buffer every n seconds
-    Get SD card and record data
-    Add request data button into the app glasses would need to receive character from phone to switch modes
-* Get EAGLE drawings done
+* ~~Package Raw Data for Android Phone
+    ~~Buffer every n seconds
+    ~~Get SD card and record data
+    ~~Add request data button into the app glasses would need to receive character from phone to switch modes
+* Test with Arduino Nano instead of Teensy 4.1
+* Get Altium drawings done
+    Need to get Arduino Nano parts onto drawing
 * Send board out for manufacturing
 * Assemble Board
 * Flash Board
