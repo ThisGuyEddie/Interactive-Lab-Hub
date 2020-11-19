@@ -18,7 +18,7 @@ String dataString = "";
 // Teensy 4.1 on-board: BUILTIN_SDCARD
 const int chipSelect = BUILTIN_SDCARD;
 
-File dataFile;
+// File dataFile;
 
 // Mode Select Char for Bluetooth Mode Switch Case
 char mode = 'S';
@@ -64,27 +64,9 @@ void loop() {
 
   switch(mode){
 
-  
     case 'T':
       // 'T' : Transmit RAW datastream live over Bluetooth
       Serial2.println(micOut);
-
-      // Stream SD Card Contents
-      // re-open the file for reading:
-      dataFile = SD.open("output.txt");
-      if (dataFile) {
-      Serial.println("output.txt:");
-    
-      // read from the file until there's nothing else in it:
-      while (dataFile.available()) {
-      Serial.write(dataFile.read());
-      }
-      // close the file:
-      dataFile.close();
-      } else {
-      // if the file didn't open, print an error:
-      Serial.println("error opening output.txt");
-      }
 
     case 'G':
       // Stream SD Card Contents
@@ -105,36 +87,29 @@ void loop() {
       Serial.println("error opening output.txt");
       }
 
-
     case 'S':
         // Store micOut readings to SD Card
         // read mic input and append to dataString:
 
-        ////////
-
-        Serial.print("Initializing SD card...");
+        // Serial.print("Initializing SD card...");
 
         if (!SD.begin(chipSelect)) {
             Serial.println("initialization failed!");
+            mode = 'T'
             return;
         }
-        Serial.println("initialization done.");
-    
+        // Serial.println("initialization done.");
 
         dataString += String(micOut);
         dataString += ","; 
 
-        dataFile = SD.open("output.txt", FILE_WRITE);
+        File dataFile = SD.open("output.txt", FILE_WRITE);
 
-          // if the file opened okay, write to it:
+         // if the file opened okay, write to it:
         if (dataFile) {
-            Serial.print("Writing to output.txt...");
             dataFile.println(dataString);
-            // close the file:
-            // dataFile.close();
-            // Serial.println("done.");
+            Serial.printlln(dataString);
         } else {
-            // if the file didn't open, print an error:
             Serial.println("error opening output.txt");
         }
   }
