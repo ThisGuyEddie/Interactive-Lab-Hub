@@ -71,9 +71,9 @@ void loop() {
 
       // Stream SD Card Contents
       // re-open the file for reading:
-      dataFile = SD.open("micOuput.txt");
+      dataFile = SD.open("output.txt");
       if (dataFile) {
-      Serial.println("micOuput.txt:");
+      Serial.println("output.txt:");
     
       // read from the file until there's nothing else in it:
       while (dataFile.available()) {
@@ -83,16 +83,16 @@ void loop() {
       dataFile.close();
       } else {
       // if the file didn't open, print an error:
-      Serial.println("error opening micOuput.txt");
+      Serial.println("error opening output.txt");
       }
 
     case 'G':
       // Stream SD Card Contents
       // re-open the file for reading:
       Serial.println('Getting from SD');
-      dataFile = SD.open("micOuput.txt");
+      dataFile = SD.open("output.txt");
       if (dataFile) {
-      Serial.println("micOuput.txt:");
+      Serial.println("output.txt:");
     
       // read from the file until there's nothing else in it:
       while (dataFile.available()) {
@@ -102,7 +102,7 @@ void loop() {
       dataFile.close();
       } else {
       // if the file didn't open, print an error:
-      Serial.println("error opening micOuput.txt");
+      Serial.println("error opening output.txt");
       }
 
 
@@ -124,18 +124,18 @@ void loop() {
         dataString += String(micOut);
         dataString += ","; 
 
-        dataFile = SD.open("xyz.txt", FILE_WRITE);
+        dataFile = SD.open("output.txt", FILE_WRITE);
 
           // if the file opened okay, write to it:
         if (dataFile) {
-            Serial.print("Writing to xyz.txt...");
+            Serial.print("Writing to output.txt...");
             dataFile.println(dataString);
             // close the file:
             // dataFile.close();
             // Serial.println("done.");
         } else {
             // if the file didn't open, print an error:
-            Serial.println("error opening xyz.txt");
+            Serial.println("error opening output.txt");
         }
   }
   int micOutput = findPTPAmp();
