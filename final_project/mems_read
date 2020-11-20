@@ -18,17 +18,17 @@ String dataString = "";
 // Teensy 4.1 on-board: BUILTIN_SDCARD
 const int chipSelect = BUILTIN_SDCARD;
 
-// File dataFile;
+File dataFile;
 
 // Mode Select Char for Bluetooth Mode Switch Case
-char mode = 'S';
+char mode = 'T';
 
 ///// SETUP ////
 void setup() {
   Serial.begin(9600);
   Serial2.begin(9600);
 
-  Serial.print("Initializing SD card...");
+//   Serial.print("Initializing SD card...");
   
   // see if the card is present and can be initialized:
   if (!SD.begin(chipSelect)) {
@@ -36,7 +36,7 @@ void setup() {
     // don't do anything more:
     return;
   }
-  Serial.println("card initialized.");
+//   Serial.println("card initialized.");
 }
 
 
@@ -48,73 +48,67 @@ void loop() {
       // 'G' : Get contents from SD Card
       // 'S' : Store Raw Data to SD Card
 
-      if (Serial2.read() == 'T'){
-        mode= 'T';
-        Serial.println('Transmitting RAW Signal');
-        }
-      if (Serial2.read() == 'G'){
-        mode= 'G';
-        Serial.println('Getting contents from SD Card');
-        }
-      if (Serial2.read() == 'S'){
-        mode= 'S';
-        Serial.println('Storing RAW to SD Card');
-      } 
+      if (Serial2.read() == 'T'){ mode= 'T';}
+      if (Serial2.read() == 'G'){ mode= 'G';}
+      if (Serial2.read() == 'S'){ mode= 'S';} 
     } 
 
   switch(mode){
 
+  
     case 'T':
-      // 'T' : Transmit RAW datastream live over Bluetooth
-      Serial2.println(micOut);
+    // 'T' : Transmit RAW datastream live over Bluetooth
+    Serial2.println(micOut);
+    Serial.println(micOut)''
+      }
 
     case 'G':
       // Stream SD Card Contents
       // re-open the file for reading:
-      Serial.println('Getting from SD');
-      dataFile = SD.open("output.txt");
+      myFile = SD.open("micOutput.txt");
       if (dataFile) {
-      Serial.println("output.txt:");
+      Serial.println("micOutput.txt:");
     
       // read from the file until there's nothing else in it:
       while (dataFile.available()) {
       Serial.write(dataFile.read());
+      Serial2.println(datafile.read());
       }
       // close the file:
       dataFile.close();
       } else {
       // if the file didn't open, print an error:
-      Serial.println("error opening output.txt");
+      Serial.println("error opening micOutput.txt");
       }
+
 
     case 'S':
         // Store micOut readings to SD Card
         // read mic input and append to dataString:
+    
 
-        // Serial.print("Initializing SD card...");
-
-        if (!SD.begin(chipSelect)) {
-            Serial.println("initialization failed!");
-            mode = 'T'
-            return;
-        }
-        // Serial.println("initialization done.");
 
         dataString += String(micOut);
         dataString += ","; 
+      
+        // open the file.
+        dataFile = SD.open("micOutput.txt", FILE_WRITE);
 
-        File dataFile = SD.open("output.txt", FILE_WRITE);
-
-         // if the file opened okay, write to it:
+        // if the file is available, write to it:
         if (dataFile) {
-            dataFile.println(dataString);
-            Serial.printlln(dataString);
-        } else {
-            Serial.println("error opening output.txt");
-        }
+            dataFile.write(dataString);
+
+            // print to the serial port too:
+            Serial.println(dataString);
+        }  
+        // if the file isn't open, pop up an error:
+        else {
+        Serial.println("error opening micOuput.txt");
+      } 
   }
-  int micOutput = findPTPAmp();
-  VUMeter(micOutput);
+  // Gets Peak to Peak Amplitude from 'mic'
+  int micOut = findPTPAmp();
+  int volume = VUMeter(micOut);
 }
 
 
