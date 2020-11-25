@@ -44,3 +44,9 @@ Also needed for the project are a smartwatch and smartphone.
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/cbm_to_phone_to_watch_small.jpg)
 
 We expect wearers to treat the glasses and wear them as they normally would. They would need to download the phone and watch app ahead of time and then pair the glasses to the phone. We will be including a button for powering the device on/off and to enable pairing mode. The glasses themselves will continuously track breathing through the MEMS microphone which is set to a low gain and will utilize filters to eliminate frequencies not expected in normal, shallow, or rapid breathing. 
+
+
+## Measurements
+* MEMS:  14.50 mm x 10.75 mm
+* HC-05: 37.75 mm x 16.45 mm 
+* Teensy: 234 mm x 185.85 mm 
