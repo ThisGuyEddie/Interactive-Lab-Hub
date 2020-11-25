@@ -47,6 +47,6 @@ We expect wearers to treat the glasses and wear them as they normally would. The
 
 
 ## Measurements
-* MEMS:  14.50 mm x 10.75 mm
-* HC-05: 37.75 mm x 16.45 mm 
-* Teensy: 234 mm x 185.85 mm 
+* MEMS:  14.50 x 10.75 x 2.60 mm
+* HC-05: 37.75 x 16.45 x 4.10 mm
+* Teensy: 234 x 185.85 x 12.6 (or 3.3 w/o headers) mm
