@@ -29,6 +29,7 @@ This vision for a wearable respiration monitoring system takes the form of a pai
 
 ## Rough Form
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/cbm_proto.png)
+![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/glasses_mockup.jpeg)
 
 ## Expected parts
 The major components for the prototype thus far include:
