@@ -16,3 +16,4 @@ This guide is meant to help place parts on a breadboard.
   3c. Mic Vin to Bus POS
   
 When ready for programming, connect the Teensy 4.1 to a PC using a Micro-USB cable.
+![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/mems_breadboard.jpg)
