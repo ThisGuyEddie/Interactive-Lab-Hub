@@ -19,7 +19,9 @@ When designing ubiquitous computing wearable devices, power consumption plays a 
 
 ## Rough Form
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/glasses_views.png)
+
 ![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/glasses_mockup.jpeg)
+
 
 ## Requisite Parts
 The major components for the prototype thus far include:
@@ -31,7 +33,8 @@ The major components for the prototype thus far include:
 Also needed for the project are a smartwatch and smartphone. 
 
 ## Interaction Plan
-![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/cbm_to_phone_to_watch_small.jpg)
+![](https://github.com/ThisGuyEddie/Interactive-Lab-Hub/blob/master/final_project/media/cbm_to_phone_to_watch.png)
+
 
 We expect wearers to treat the glasses and wear them as they normally would. They would need to download the phone and watch app ahead of time and then pair the glasses to the phone. We will be including a button for powering the device on/off and to enable pairing mode. The glasses themselves will continuously track breathing through the MEMS microphone which is set to a low gain and will utilize filters to eliminate frequencies not expected in normal, shallow, or rapid breathing. 
 
@@ -45,7 +48,7 @@ We expect wearers to treat the glasses and wear them as they normally would. The
 
 ## References
 
-[1] Glass enterprise edition 2 tech specs. Retrieved December 10, 2020, from https://www.google.com/glass/tech-specs/ .
+[1] Glass Enterprise Edition 2 Tech Specs. Retrieved December 10, 2020, from https://www.google.com/glass/tech-specs/ .
 
 
 [2] NIMH » Any Anxiety Disorder. Retrieved September 16, 2020 from https://www.nimh.nih.gov/health/statistics/any-anxiety-disorder.shtml
