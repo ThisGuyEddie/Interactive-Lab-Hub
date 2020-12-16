@@ -1,3 +1,5 @@
+
+// Including the necessary head files.
 #include <SD.h>
 #include <SPI.h>
 
@@ -24,14 +26,15 @@ char mode = 'T';
 
 File dataFile;
 
-///// SETUP ////
+// Initial setup
 
 void setup()
 {
-	//  mode = 'T';
-	Serial.begin(9600);
-	Serial2.begin(9600);
-	// see if the card is present and can be initialized:
+	//  mode = 'T';     // Uncomment to hard code the teensy to Transmit Mode
+	Serial.begin(9600);     // Sets the baud rate to 9600 Hz for the Teensy
+	Serial2.begin(9600);    // Sets the baud rate to 9600 Hz for the Bluetooth Transmission
+	
+    // see if the card is present and can be initialized:
 	if (!SD.begin(chipSelect))
 	{
 		Serial.println("Card failed, or not present");
@@ -171,9 +174,7 @@ int findPTPAmp()
 
 	PTPAmp = maxAmp - minAmp;					 // (max amp) - (min amp) = peak-to-peak amplitude
 	double micOut_Volts = (PTPAmp * 3.3) / 1024; // Convert ADC into voltage
-
-	//Uncomment this line for help debugging (be sure to also comment out the VUMeter function)
-	//Serial.println(PTPAmp);
+	//Serial.println(PTPAmp);       //Uncomment this line for help debugging (be sure to also comment out the VUMeter function)
 
 	//Return the PTP amplitude to use in the soundLevel function.
 
