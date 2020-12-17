@@ -38,9 +38,10 @@ Also needed for the project are a smartwatch and smartphone.
 
 We expect wearers to treat the glasses and wear them as they normally would. They would need to download the phone and watch app ahead of time and then pair the glasses to the phone. We will be including a button for powering the device on/off and to enable pairing mode. The glasses themselves will continuously track breathing through the MEMS microphone which is set to a low gain and will utilize filters to eliminate frequencies not expected in normal, shallow, or rapid breathing. 
 
-## Demo Video
+### Demo Video
 [![](http://img.youtube.com/vi/DEPCkV66I98/0.jpg)](http://www.youtube.com/watch?v=DEPCkV66I98 "Continuous Breathing Monitoring")
 
+### [Link to slides](https://prezi.com/view/IX5KmWu1opuEYLQjyUu3/)
 
 
 
